@@ -1,10 +1,10 @@
-#ifndef PARTICLE_H
-#define PARTICLE_H
+#ifndef BOID_H
+#define BOID_H
 
 #include "ofVec2f.h"
 #include "target.h"
 
-class Particle {
+class Boid {
 
     ofVec2f location;
     ofVec2f velocity;
@@ -28,7 +28,7 @@ class Particle {
 public:
     Target* target;
 
-    Particle(float x, float y) {
+    Boid(float x, float y) {
 
         location.set(x, y);
         acceleration.set(0, 0);
@@ -143,4 +143,4 @@ public:
     }
 };
 
-#endif // PARTICLE_H
+#endif // BOID_H

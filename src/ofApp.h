@@ -1,13 +1,13 @@
 #pragma once
 
 #include "ofMain.h"
-#include "particle.h"
+#include "boid.h"
 #include "target.h"
 
 class ofApp : public ofBaseApp {
     int maxEntities = 200;
-    vector<Particle*> particles;
-    vector<Target*>   targets;
+    vector<Boid*>   boids;
+    vector<Target*> targets;
     bool showTarget;
 
 public:

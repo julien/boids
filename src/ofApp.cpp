@@ -9,8 +9,8 @@ void ofApp::setup() {
     targets.push_back(target);
 
     for (i = 0; i < maxEntities; ++i) {
-        Particle* p = new Particle(ofGetWidth() / 2, ofGetHeight() / 2);
-        particles.push_back(p);
+        Boid* p = new Boid(ofGetWidth() / 2, ofGetHeight() / 2);
+        boids.push_back(p);
     }
 }
 
@@ -22,8 +22,8 @@ void ofApp::update() {
     ofVec2f pos = t->position();
 
     unsigned int i;
-    for (i = 0; i < particles.size(); i++) {
-        Particle* p = particles.at(i);
+    for (i = 0; i < boids.size(); i++) {
+        Boid* p = boids.at(i);
         if (p && p->alive()) {
             p->arrive(pos);
 
@@ -45,8 +45,8 @@ void ofApp::update() {
             p->update();
 
             if (!p->alive()) {
-                particles.erase(particles.begin() + i);
-                particles.push_back(new Particle(ofGetWidth() / 2, ofGetHeight() / 2));
+                boids.erase(boids.begin() + i);
+                boids.push_back(new Boid(ofGetWidth() / 2, ofGetHeight() / 2));
             }
         }
     }
@@ -55,8 +55,8 @@ void ofApp::update() {
 void ofApp::draw() {
     if (showTarget) targets.at(0)->draw();
 
-    for (unsigned int i = 0; i < particles.size(); ++i) {
-        particles.at(i)->draw();
+    for (unsigned int i = 0; i < boids.size(); ++i) {
+        boids.at(i)->draw();
     }
 }
 

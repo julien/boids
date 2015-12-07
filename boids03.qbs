@@ -12,7 +12,7 @@ Project{
         name: { return FileInfo.baseName(path) }
 
         files: [
-            "src/particle.h",
+            "src/boid.h",
             "src/main.cpp",
             "src/ofApp.cpp",
             "src/ofApp.h",
